@@ -1,0 +1,9 @@
+Package: uniconv
+Version: 0.1.1
+Section: custom
+Priority: optional
+Architecture: all
+Essential: no
+Installed-Size: 1024
+Maintainer: www.mkproj.com
+Description: A Unit Converter
