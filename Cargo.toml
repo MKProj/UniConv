@@ -1,6 +1,6 @@
 [package]
 name = "uniconv"
-version = "0.1.2"
+version = "1.1.0"
 authors = ["mustafif0929@gmail.com <mustafif0929@gmail.com>"]
 edition = "2018"
 description = "A CommandLine Unit Converter"
@@ -9,4 +9,4 @@ license = "MIT"
 
 [dependencies]
 structopt = "0.3.21"
-mkproj-lib = "0.1.7"
+mkproj-lib = "0.2.8"

@@ -18,31 +18,31 @@ fn main() {
     let unit = std::env::args().nth(2).unwrap();
     let conv = std::env::args().nth(3).unwrap();
 
-    // First Temperature
+    // First temperature
     if mode == String::from("temp") {
         let u1: f32 = unit.trim().parse().expect("Expected valid float unit");
-        if conv == String::from("c2f") {
-            conv_unit = Temperature::cels_to_fahr(u1, conv_unit);
+        if conv == String::from("cels_to_fahr") {
+            conv_unit = temperature::cels_to_fahr(u1);
             println!("{} degrees Celcius is {} degrees Fahrenheit", u1, conv_unit);
-        } else if conv == String::from("c2k") {
-            conv_unit = Temperature::cels_to_kelv(u1, conv_unit);
+        } else if conv == String::from("cles_to_kelv") {
+            conv_unit = temperature::cels_to_kelv(u1);
             println!("{} degrees Celcius is {} degrees Kelvin", u1, conv_unit);
-        } else if conv == String::from("f2c") {
-            conv_unit = Temperature::fahr_to_cels(u1, conv_unit);
+        } else if conv == String::from("fahr_to_cels") {
+            conv_unit = temperature::fahr_to_cels(u1);
             println!(
                 " {} degrees Fahrenheit is {} degrees Celsius ",
                 u1, conv_unit
             );
-        } else if conv == String::from("f2k") {
-            conv_unit = Temperature::fahr_to_kelv(u1, conv_unit);
+        } else if conv == String::from("fahr_to_kelv") {
+            conv_unit = temperature::fahr_to_kelv(u1);
             println!("{} degrees Fahrenheit is {} degrees Kelvin", u1, conv_unit);
-        } else if conv == String::from("k2c") {
-            conv_unit = Temperature::kelv_to_cels(u1, conv_unit);
+        } else if conv == String::from("kelv_to_cels") {
+            conv_unit = temperature::kelv_to_cels(u1);
             println!("{} degrees Kelvin is {} degrees Celsius ", u1, conv_unit);
-        } else if conv == String::from("k2f") {
-            conv_unit = Temperature::kelv_to_fahr(u1, conv_unit);
+        } else if conv == String::from("kelv_to_fahr") {
+            conv_unit = temperature::kelv_to_fahr(u1);
             println!("{} degrees Kelvin is {} degrees Fahrenheit ", u1, conv_unit);
         }
     }
-    // Temperature ends
+    // temperature ends
 }
