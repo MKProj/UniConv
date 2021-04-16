@@ -4,16 +4,26 @@ use structopt::StructOpt;
 #[structopt(name = "UniConv - A Command Line Unit Converter")]
 
 struct Cli {
-    //#[structopt(subcommand)]
-    //flag: Option<Flag>,
-    mode: String,
-    unit: f32,
-    conversion: String,
+    #[structopt(subcommand)]
+    _mode: Mode,
 }
+#[derive(StructOpt)]
+enum Mode {
+    #[structopt(about="Converts units of temperatures")]
+    Temp(Temp)
+}
+#[derive(StructOpt)]
+struct Temp{
+    _unit: f32,
+    _conversion: String,
+}
+
+
+
 
 fn main() {
     let mut conv_unit: f32 = 0.0;
-    let args = Cli::from_args();
+    let _args = Cli::from_args();
     let mode = std::env::args().nth(1).unwrap();
     let unit = std::env::args().nth(2).unwrap();
     let conv = std::env::args().nth(3).unwrap();
@@ -24,7 +34,7 @@ fn main() {
         if conv == String::from("cels_to_fahr") {
             conv_unit = temperature::cels_to_fahr(u1);
             println!("{} degrees Celcius is {} degrees Fahrenheit", u1, conv_unit);
-        } else if conv == String::from("cles_to_kelv") {
+        } else if conv == String::from("cels_to_kelv") {
             conv_unit = temperature::cels_to_kelv(u1);
             println!("{} degrees Celcius is {} degrees Kelvin", u1, conv_unit);
         } else if conv == String::from("fahr_to_cels") {
